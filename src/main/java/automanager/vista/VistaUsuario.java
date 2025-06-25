@@ -1,4 +1,4 @@
-package grupo4.vista;  
+package automanager.vista;  
 
 public class VistaUsuario {
     public void mostrarMenu() {

@@ -1,4 +1,4 @@
-package grupo4.modelo;
+package automanager.modelo;
 
 public class FaltaInsumo {
     private String descripcion;

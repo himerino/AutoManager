@@ -1,4 +1,4 @@
-package grupo4.modelo;
+package automanager.modelo;
 
 public abstract class Persona {
     protected String id;
