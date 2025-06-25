@@ -1,6 +1,6 @@
 package grupo4.modelo;
 
-public class Persona {
+public abstract class Persona {
     private String id;
     private String nombre;
     private String telefono;
