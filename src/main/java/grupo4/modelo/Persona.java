@@ -1,9 +1,9 @@
 package grupo4.modelo;
 
 public abstract class Persona {
-    private String id;
-    private String nombre;
-    private String telefono;
+    protected String id;
+    protected String nombre;
+    protected String telefono;
     
     public Persona(String id, String nombre, String telefono) {
         this.id = id;
