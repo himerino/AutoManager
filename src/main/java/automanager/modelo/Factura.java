@@ -44,27 +44,4 @@ public class Factura {
         return total;
     }
 
-    public String generarDetalleFactura() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Empresa: ").append(cliente.getNombre()).append("\n");
-        sb.append("Periodo de facturación: ").append(fechaEmision.getMonth()).append(" ").append(fechaEmision.getYear()).append("\n");
-        sb.append("Detalle de servicios:\n");
-        sb.append(String.format("%-10s %-12s %-10s %-25s %-8s %-8s\n", "Placa", "Fecha", "Tipo", "Servicio", "Cant", "Total"));
-
-        for (OrdenServicio orden : ordenes) {
-            for (ItemOrdenServicio item : orden.getItems()) {
-                sb.append(String.format(
-                    "%-10s %-12s %-10s %-25s %-8d %-8.2f\n",
-                    orden.getVehiculo().getPlaca(),
-                    orden.getFecha(),
-                    orden.getVehiculo().getTipo(),
-                    item.getServicio().getNombre(),
-                    item.getCantidad(),
-                    item.calcularSubtotal()
-                ));
-            }
-        }
-        sb.append("Total a pagar: ").append(calcularTotal()).append("\n");
-        return sb.toString();
-    }
 }
