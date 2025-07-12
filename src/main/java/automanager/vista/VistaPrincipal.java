@@ -36,7 +36,8 @@ public class VistaPrincipal {
                     break;
                 case 3:
                     System.out.println("Administrar técnicos...");
-                    // llamar a VistaTecnico
+                    ControladorTecnico ct = new ControladorTecnico(sistema);
+                    new VistaTecnico(ct);
                     break;
                 case 4:
                     System.out.println("Administrar servicios...");
