@@ -39,8 +39,11 @@ public class VistaCliente {
         if (clientes.isEmpty()) {
             System.out.println("\nNo hay clientes registrados.\n");
         } else {
+            System.out.printf("\n%-15s %-20s %-25s %-15s %-12s\n", "Identificación", "Nombre", "Dirección", "Teléfono", "Tipo");
+            System.out.println("-".repeat(90));
             for (Cliente c : clientes) {
-                System.out.println(c);
+                System.out.printf("%-15s %-20s %-25s %-15s %-12s\n",
+                        c.getId(), c.getNombre(), c.getDireccion(), c.getTelefono(), c.getTipo());
             }
             System.out.println();
         }

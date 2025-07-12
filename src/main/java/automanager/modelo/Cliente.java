@@ -26,12 +26,7 @@ public class Cliente extends Persona {
     public void setTipo(TipoCliente tipo) {
         this.tipo = tipo;
     }
-    //Identificación, Nombre, Teléfono, Dirección, Tipo de Cliente
 
-    @Override
-    public String toString() {
-        return super.toString() + "Dirección:" + direccion + ", Tipo de Cliente:" + tipo;
-    }
     
 
 

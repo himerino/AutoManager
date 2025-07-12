@@ -23,11 +23,6 @@ public abstract class Persona {
         return telefono;
     }
 
-    @Override
-    public String toString() {
-        return "Identificación:" + id + ", Nombre:" + nombre + ", Teléfono:" + telefono;
-    }
-
     
     
 
