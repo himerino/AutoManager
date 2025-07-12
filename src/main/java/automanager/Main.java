@@ -28,10 +28,10 @@ public class Main {
         sistema.agregarTecnico(new Tecnico("1102", "Alvaro López", "0999888777", "Suspensión"));
 
         // 2. Clientes
-        sistema.agregarCliente(new Cliente("1701", "Carlos Pérez", "Av. Quito", "0991112222", TipoCliente.PERSONAL));
-        sistema.agregarCliente(new Cliente("1702", "Lucía Gómez", "Av. América", "0993334444", TipoCliente.PERSONAL));
-        sistema.agregarCliente(new Cliente("1799", "Grupo HG S.A", "Parque Industrial", "023456789", TipoCliente.EMPRESARIAL));
-        sistema.agregarCliente(new Cliente("1798", "Transporte Express", "Av. 10 de Agosto", "022345678", TipoCliente.EMPRESARIAL));
+        sistema.agregarCliente(new Cliente("1701", "Carlos Pérez", "0991112222", "Av. Quito", TipoCliente.PERSONAL));
+        sistema.agregarCliente(new Cliente("1702", "Lucía Gómez", "0993334444", "Av. América", TipoCliente.PERSONAL));
+        sistema.agregarCliente(new Cliente("1799", "Grupo HG S.A", "023456789", "Parque Industrial", TipoCliente.EMPRESARIAL));
+        sistema.agregarCliente(new Cliente("1798", "Transporte Express", "022345678", "Av. 10 de Agosto", TipoCliente.EMPRESARIAL));
 
         // 3. Proveedores
         sistema.agregarProveedor(new Proveedor("201", "InsumosAuto S.A", "022112233", "Proveedor de filtros y aceites"));
