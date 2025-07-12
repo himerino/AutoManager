@@ -23,7 +23,8 @@ public class VistaProveedor {
             mostrarProveedores();
             mostrarSubmenu();
             opcion = scanner.nextInt();
-            scanner.nextLine(); // limpiar buffer
+            System.out.println();
+            scanner.nextLine();
 
             switch (opcion) {
                 case 1 -> agregarProveedor();
@@ -53,6 +54,7 @@ public class VistaProveedor {
         System.out.println();
         System.out.println("1. Agregar Proveedor");
         System.out.println("2. Regresar al menú principal");
+        System.out.println();
         System.out.print("\nSeleccione una opción: ");
     }
 
