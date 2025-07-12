@@ -1,6 +1,7 @@
 package automanager.modelo;
 
 public class ItemOrdenServicio {
+    
     private Servicio servicio;
     private int cantidad;
 
@@ -24,4 +25,5 @@ public class ItemOrdenServicio {
     public double calcularSubtotal() {
         return servicio.getPrecioActual() * cantidad;
     }
+
 }

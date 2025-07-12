@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class OrdenServicio {
+    
     private Cliente cliente;
     private Vehiculo vehiculo;
     private Tecnico tecnico;
@@ -63,4 +64,5 @@ public class OrdenServicio {
         }
         return total;
     }
+
 }

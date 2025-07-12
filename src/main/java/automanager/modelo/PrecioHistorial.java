@@ -3,6 +3,7 @@ package automanager.modelo;
 import java.time.LocalDate;
 
 public class PrecioHistorial {
+
     private LocalDate fecha;
     private double precio;
 
@@ -12,5 +13,7 @@ public class PrecioHistorial {
     }
 
     public LocalDate getFecha() { return fecha; }
+
     public double getPrecio() { return precio; }
+    
 }

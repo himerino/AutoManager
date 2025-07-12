@@ -1,6 +1,7 @@
 package automanager.modelo;
 
 public class Proveedor extends Persona {
+    
     private String descripcion;
 
     public Proveedor(String id, String nombre, String telefono, String descripcion) {
@@ -15,7 +16,5 @@ public class Proveedor extends Persona {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-
-    
-    
+  
 }

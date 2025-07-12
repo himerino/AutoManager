@@ -26,9 +26,5 @@ public class Cliente extends Persona {
     public void setTipo(TipoCliente tipo) {
         this.tipo = tipo;
     }
-
-    
-
-
-    
+  
 }

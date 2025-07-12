@@ -7,7 +7,9 @@ import automanager.modelo.Sistema;
 import java.util.*;
 
 public class ControladorReporteServicio {
+    
     private Sistema sistema;
+
     public ControladorReporteServicio(Sistema sistema) {
         this.sistema = sistema;
     }

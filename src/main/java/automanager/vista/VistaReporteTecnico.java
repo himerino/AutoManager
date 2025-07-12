@@ -1,24 +1,26 @@
 package automanager.vista;
+
 import automanager.controlador.ControladorReporteTecnico;
 import java.util.Map;
 import java.util.Scanner;
 
 public class VistaReporteTecnico {
+    
     private ControladorReporteTecnico controlador;
-    private Scanner sc;
+    private Scanner scanner;
 
     public VistaReporteTecnico(ControladorReporteTecnico controlador) {
         this.controlador = controlador;
-        this.sc = new Scanner(System.in);
+        this.scanner = new Scanner(System.in);
         iniciar();
     }
 
     public void iniciar() {
         System.out.println("\n--- Reporte de Ingresos por Técnico ---");
         System.out.print("Ingrese el año: ");
-        int anio = sc.nextInt();
+        int anio = scanner.nextInt();
         System.out.print("Ingrese el mes: ");
-        int mes = sc.nextInt();
+        int mes = scanner.nextInt();
 
         Map<String, Double> reporte = controlador.generarReporteTecnico(mes, anio);
 

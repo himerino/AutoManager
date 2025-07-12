@@ -1,6 +1,7 @@
 package automanager.modelo;
 
 public abstract class Persona {
+
     protected String id;
     protected String nombre;
     protected String telefono;
@@ -22,8 +23,5 @@ public abstract class Persona {
     public String getTelefono() {
         return telefono;
     }
-
-    
-    
 
 }

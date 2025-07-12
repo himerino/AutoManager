@@ -1,6 +1,7 @@
 package automanager.modelo;
 
 public class FaltaInsumo {
+    
     private String descripcion;
     private Proveedor proveedor;
     
@@ -20,7 +21,5 @@ public class FaltaInsumo {
     public Proveedor getProveedor() {
         return proveedor;
     }
-
-    
-    
+   
 }

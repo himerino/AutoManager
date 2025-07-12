@@ -1,8 +1,9 @@
 package automanager.modelo;
+
 import java.util.ArrayList;
 
-
 public class Sistema {
+
     private ArrayList<Cliente> clientes;
     private ArrayList<Tecnico> tecnicos;
     private ArrayList<Proveedor> proveedores;
@@ -19,7 +20,7 @@ public class Sistema {
         faltas = new ArrayList<>();
     }
 
-    // === MÉTODOS DE CLIENTE ===
+    // MÉTODOS DE CLIENTE
     public void agregarCliente(Cliente cliente) {
         clientes.add(cliente);
     }
@@ -35,7 +36,7 @@ public class Sistema {
         return null;
     }
 
-    // === MÉTODOS DE TÉCNICO ===
+    // MÉTODOS DE TÉCNICO
     public void agregarTecnico(Tecnico tecnico) {
         tecnicos.add(tecnico);
     }
@@ -51,7 +52,7 @@ public class Sistema {
         return null;
     }
 
-    // === MÉTODOS DE PROVEEDOR ===
+    // MÉTODOS DE PROVEEDOR
     public void agregarProveedor(Proveedor proveedor) {
         proveedores.add(proveedor);
     }
@@ -67,7 +68,7 @@ public class Sistema {
         return null;
     }
 
-    // === MÉTODOS DE SERVICIO ===
+    // MÉTODOS DE SERVICIO
     public void agregarServicio(Servicio servicio) {
         servicios.add(servicio);
     }
@@ -83,7 +84,7 @@ public class Sistema {
         return null;
     }
 
-    // === MÉTODOS DE ORDEN DE SERVICIO ===
+    // MÉTODOS DE ORDEN DE SERVICIO
     public void agregarOrdenServicio(OrdenServicio orden) {
         ordenes.add(orden);
     }
@@ -92,31 +93,8 @@ public class Sistema {
         return ordenes;
     }
 
-    // Obtener órdenes por cliente y mes
-    public ArrayList<OrdenServicio> getOrdenesPorClienteYMes(String clienteId, int anio, int mes) {
-        ArrayList<OrdenServicio> resultado = new ArrayList<>();
-        for (OrdenServicio orden : ordenes) {
-            if (orden.getCliente().getId().equals(clienteId)
-                    && orden.getFecha().getYear() == anio
-                    && orden.getFecha().getMonthValue() == mes) {
-                resultado.add(orden);
-            }
-        }
-        return resultado;
-    }
 
-    // Obtener órdenes por año y mes (para reportes de ingresos/técnicos)
-    public ArrayList<OrdenServicio> getOrdenesPorMes(int anio, int mes) {
-        ArrayList<OrdenServicio> resultado = new ArrayList<>();
-        for (OrdenServicio orden : ordenes) {
-            if (orden.getFecha().getYear() == anio && orden.getFecha().getMonthValue() == mes) {
-                resultado.add(orden);
-            }
-        }
-        return resultado;
-    }
-
-    // === MÉTODOS DE FALTA DE INSUMO ===
+    // MÉTODOS DE FALTA DE INSUMO
     public void agregarFaltaInsumo(FaltaInsumo falta) {
         faltas.add(falta);
     }

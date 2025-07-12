@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Servicio {
+
     private String codigo;
     private String nombre;
     private double precioActual;
@@ -40,4 +41,5 @@ public class Servicio {
         PrecioHistorial nuevoRegistro = new PrecioHistorial(LocalDate.now(), precio);
         historialPrecios.add(nuevoRegistro);
     }
+    
 }

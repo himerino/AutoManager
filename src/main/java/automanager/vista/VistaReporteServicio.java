@@ -1,8 +1,11 @@
 package automanager.vista;
+
 import automanager.controlador.ControladorReporteServicio;
 import java.util.Map;
 import java.util.Scanner;
+
 public class VistaReporteServicio {
+    
     private ControladorReporteServicio controlador;
     private Scanner scanner;
 

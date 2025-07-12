@@ -1,10 +1,12 @@
 package automanager.controlador;
+
 import automanager.modelo.OrdenServicio;
 import automanager.modelo.Sistema;
 
 import java.util.*;
 
 public class ControladorReporteTecnico {
+    
     private Sistema sistema;
 
     public ControladorReporteTecnico(Sistema sistema) {

@@ -10,11 +10,11 @@ import java.util.Scanner;
 public class VistaCliente {
 
     private ControladorCliente controlador;
-    private Scanner sc;
+    private Scanner scanner;
 
     public VistaCliente(ControladorCliente controlador) {
         this.controlador=controlador;
-        this.sc = new Scanner(System.in);
+        this.scanner = new Scanner(System.in);
         iniciar();
     }
 
@@ -23,8 +23,8 @@ public class VistaCliente {
         do {
             mostrarClientes();
             mostrarSubmenu();
-            opcion = sc.nextInt();
-            sc.nextLine();
+            opcion = scanner.nextInt();
+            scanner.nextLine();
 
             switch (opcion) {
                 case 1 -> agregarCliente();
@@ -56,16 +56,15 @@ public class VistaCliente {
         System.out.print("Seleccione una opción: ");
     }
 
-
     private void agregarCliente() {
         System.out.print("Identificación: ");
-        String id = sc.nextLine();
+        String id = scanner.nextLine();
         System.out.print("Nombre: ");
-        String nombre = sc.nextLine();
+        String nombre = scanner.nextLine();
         System.out.print("Dirección: ");
-        String direccion = sc.nextLine();
+        String direccion = scanner.nextLine();
         System.out.print("Teléfono: ");
-        String telefono = sc.nextLine();
+        String telefono = scanner.nextLine();
         TipoCliente tipo = leerTipoCliente();
 
         MensajeUsuario mensaje = controlador.agregarCliente(id, nombre, direccion, telefono, tipo);
@@ -76,12 +75,11 @@ public class VistaCliente {
         }
     }
 
-
     private TipoCliente leerTipoCliente() {
         while (true) {
             System.out.print("Tipo de cliente (1. PERSONAL, 2. EMPRESARIAL): ");
-            int opcion = sc.nextInt();
-            sc.nextLine();
+            int opcion = scanner.nextInt();
+            scanner.nextLine();
             switch (opcion) {
                 case 1 -> { return TipoCliente.PERSONAL; }
                 case 2 -> { return TipoCliente.EMPRESARIAL; }
@@ -89,7 +87,6 @@ public class VistaCliente {
             }
         }
     }
-
 
     private void mostrarMensaje(String mensaje) {
         System.out.println(mensaje);

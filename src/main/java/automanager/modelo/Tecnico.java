@@ -16,6 +16,5 @@ public class Tecnico extends Persona {
     public void setEspecialidad(String especialidad) {
         this.especialidad = especialidad;
     }
-
-    
+   
 }

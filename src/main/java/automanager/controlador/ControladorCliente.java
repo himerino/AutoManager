@@ -1,9 +1,11 @@
 package automanager.controlador;
-import java.util.ArrayList;
+
 import automanager.modelo.Cliente;
 import automanager.modelo.TipoCliente;
 import automanager.modelo.Sistema;
 import automanager.vista.MensajeUsuario;
+
+import java.util.ArrayList;
 
 public class ControladorCliente {
     
@@ -15,15 +17,11 @@ public class ControladorCliente {
 
     public MensajeUsuario agregarCliente(String id, String nombre, String direccion, String telefono, TipoCliente tipo) {
         Cliente c= buscarClientePorId(id);
-        if (c != null) {
-            return new MensajeUsuario("Agregar Cliente", "Ya existe un cliente con esa identificación.");
-        }else{
-            sistema.getClientes().add(c);
-        }
+        if (c != null) return new MensajeUsuario("Agregar Cliente", "Ya existe un cliente con esa identificación.");
+        sistema.getClientes().add(c);
         return null;
     }
 
-    
     public Cliente buscarClientePorId(String id) {
         for (Cliente c : sistema.getClientes()) {
             if (c.getId().equals(id)) {
@@ -36,7 +34,5 @@ public class ControladorCliente {
     public ArrayList<Cliente> getListaClientes() {
         return sistema.getClientes();
     }
-
-
 
 }

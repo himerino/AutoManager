@@ -1,6 +1,7 @@
 package automanager.modelo;
 
 public class Vehiculo {
+
     private String placa;
     private TipoVehiculo tipo;
     
@@ -21,9 +22,5 @@ public class Vehiculo {
     public void setTipo(TipoVehiculo tipo) {
         this.tipo = tipo;
     }
-
-    
-
-    
-    
+  
 }

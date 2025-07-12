@@ -1,6 +1,7 @@
 package automanager.vista;
 
 public class MensajeUsuario {
+    
     private String accion;
     private String descripcion;
 

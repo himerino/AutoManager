@@ -1,7 +1,10 @@
-package automanager.vista;  
-import java.util.Scanner;
+package automanager.vista;
+
 import automanager.modelo.Sistema;
 import automanager.controlador.*;
+
+import java.util.Scanner;
+
 public class VistaPrincipal {
 
     private Scanner sc;
@@ -47,7 +50,8 @@ public class VistaPrincipal {
                     break;
                 case 7:
                     System.out.println("Generar facturas a empresas...");
-                    // llamar a VistaFactura
+                    ControladorFactura cf= new ControladorFactura(sistema);
+                    new VistaFactura(cf);
                     break;
                 case 8:
                     System.out.println("Reporte de ingresos por servicios...");
@@ -69,7 +73,6 @@ public class VistaPrincipal {
         sc.close();
     }
     
-
     private void mostrarMenu() {
         System.out.println("\n========= MENÚ PRINCIPAL =========");
         System.out.println("1. Administrar clientes");
