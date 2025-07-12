@@ -22,6 +22,7 @@ public class VistaTecnico {
             mostrarTecnicos();
             mostrarSubmenu();
             opcion = scanner.nextInt();
+            System.out.println();
             scanner.nextLine(); 
 
             switch (opcion) {
@@ -61,6 +62,7 @@ public class VistaTecnico {
         System.out.println("1. Agregar Técnico");
         System.out.println("2. Eliminar Técnico");
         System.out.println("3. Regresar al menú principal");
+        System.out.println();
         System.out.print("\nSeleccione una opción: ");
     }
 
