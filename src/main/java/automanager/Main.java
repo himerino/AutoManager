@@ -8,7 +8,6 @@ import automanager.modelo.ItemOrdenServicio;
 import automanager.modelo.OrdenServicio;
 import automanager.modelo.Proveedor;
 import automanager.modelo.Servicio;
-import automanager.modelo.Sistema;
 import automanager.modelo.Tecnico;
 import automanager.modelo.TipoCliente;
 import automanager.modelo.TipoVehiculo;

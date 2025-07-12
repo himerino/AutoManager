@@ -1,6 +1,13 @@
-package automanager.modelo;
+package automanager;
 
 import java.util.ArrayList;
+
+import automanager.modelo.Cliente;
+import automanager.modelo.FaltaInsumo;
+import automanager.modelo.OrdenServicio;
+import automanager.modelo.Proveedor;
+import automanager.modelo.Servicio;
+import automanager.modelo.Tecnico;
 
 public class Sistema {
 

@@ -1,8 +1,8 @@
 package automanager.controlador;
 
+import automanager.Sistema;
 import automanager.modelo.Cliente;
 import automanager.modelo.TipoCliente;
-import automanager.modelo.Sistema;
 import automanager.vista.MensajeUsuario;
 
 import java.util.ArrayList;

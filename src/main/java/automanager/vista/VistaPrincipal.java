@@ -1,6 +1,6 @@
 package automanager.vista;
 
-import automanager.modelo.Sistema;
+import automanager.Sistema;
 import automanager.controlador.*;
 
 import java.util.Scanner;
