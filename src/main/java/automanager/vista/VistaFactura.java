@@ -17,6 +17,7 @@ public class VistaFactura {
 
     public void iniciar() {
         System.out.println("\n--- GENERAR FACTURA EMPRESARIAL ---");
+        System.out.println();
 
         System.out.print("Ingrese la identificación del cliente: ");
         String idCliente = scanner.nextLine();

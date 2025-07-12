@@ -8,21 +8,26 @@ import java.time.format.DateTimeFormatter;
 
 public class ControladorFactura {
     private Sistema sistema;
+    private Factura factura;
+    private Cliente cliente;
 
     public ControladorFactura(Sistema sistema) {
         this.sistema= sistema;
     }
 
     public Factura generarFactura(String idCliente, int anio, int mes) {
-        Factura factura=null;
+        factura=null;
+        cliente=null;
 
         for (OrdenServicio orden : sistema.getOrdenes()) {
             if (orden.getCliente().getId().equals(idCliente) &&
                 orden.getFecha().getYear() == anio &&
                 orden.getFecha().getMonthValue() == mes) {
+
+                cliente=orden.getCliente();
                 
-                if (orden.getCliente().getTipo() != TipoCliente.EMPRESARIAL) return null;
-                factura = new Factura(orden.getCliente(), LocalDate.of(anio, mes,orden.getFecha().getDayOfMonth()));
+                if (cliente.getTipo() != TipoCliente.EMPRESARIAL) return null;
+                factura = new Factura(cliente, LocalDate.of(anio, mes,orden.getFecha().getDayOfMonth()));
                 factura.agregarOrden(orden);
             }
         }
@@ -32,6 +37,7 @@ public class ControladorFactura {
 
     public String generarDetalleFactura(Factura factura) {
         if (factura == null) {
+            if (cliente != null && cliente.getTipo()!=TipoCliente.EMPRESARIAL) return "El cliente no es de tipo empresarial.";
             return "No se encontraron órdenes para ese cliente empresarial en el período especificado.";
         }
 
