@@ -31,7 +31,8 @@ public class VistaPrincipal {
                     break;
                 case 2:
                     System.out.println("Administrar proveedores...");
-                    // llamar a VistaProveedor
+                    ControladorProveedor cp = new ControladorProveedor(sistema);
+                    new VistaProveedor(cp);
                     break;
                 case 3:
                     System.out.println("Administrar técnicos...");
