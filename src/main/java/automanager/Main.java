@@ -17,8 +17,9 @@ import automanager.vista.VistaPrincipal;
 public class Main {
     public static void main(String[] args) {
         Sistema sistema = new Sistema();
+        inicializarApp(sistema);
         new VistaPrincipal(sistema);
-        inicializarApp(sistema); 
+         
         
     }
     public static void inicializarApp(Sistema sistema) {
