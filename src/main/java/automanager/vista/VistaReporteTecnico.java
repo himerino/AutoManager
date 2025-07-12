@@ -17,10 +17,12 @@ public class VistaReporteTecnico {
 
     public void iniciar() {
         System.out.println("\n--- Reporte de Ingresos por Técnico ---");
+        System.out.println();
         System.out.print("Ingrese el año: ");
         int anio = scanner.nextInt();
         System.out.print("Ingrese el mes: ");
         int mes = scanner.nextInt();
+        System.out.println();
 
         Map<String, Double> reporte = controlador.generarReporteTecnico(mes, anio);
 

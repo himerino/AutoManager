@@ -24,6 +24,7 @@ public class VistaCliente {
             mostrarClientes();
             mostrarSubmenu();
             opcion = scanner.nextInt();
+            System.out.println();
             scanner.nextLine();
 
             switch (opcion) {
@@ -51,8 +52,10 @@ public class VistaCliente {
 
     private void mostrarSubmenu() {
         System.out.println("===== Menú de Clientes =====");
+        System.out.println();
         System.out.println("1. Agregar Cliente");
         System.out.println("2. Regresar al menú principal");
+        System.out.println();
         System.out.print("Seleccione una opción: ");
     }
 

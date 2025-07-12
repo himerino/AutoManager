@@ -7,12 +7,12 @@ import java.util.Scanner;
 
 public class VistaPrincipal {
 
-    private Scanner sc;
+    private Scanner scanner;
     private Sistema sistema;
 
     public VistaPrincipal(Sistema sistema) {
         this.sistema=sistema;
-        this.sc = new Scanner(System.in);
+        this.scanner = new Scanner(System.in);
         iniciar();
     }
 
@@ -20,7 +20,8 @@ public class VistaPrincipal {
         int opcion;
         do {
             mostrarMenu();
-            opcion = sc.nextInt();
+            opcion = scanner.nextInt();
+            System.out.println();
 
             switch (opcion) {
                 case 1:
@@ -70,11 +71,12 @@ public class VistaPrincipal {
                     System.out.println("Opción no válida. Intente nuevamente.");
             }
         } while (opcion != 10);
-        sc.close();
+        scanner.close();
     }
     
     private void mostrarMenu() {
         System.out.println("\n========= MENÚ PRINCIPAL =========");
+        System.out.println();
         System.out.println("1. Administrar clientes");
         System.out.println("2. Administrar proveedores");
         System.out.println("3. Administrar técnicos");
@@ -85,6 +87,7 @@ public class VistaPrincipal {
         System.out.println("8. Reporte de ingresos por servicios");
         System.out.println("9. Reporte de atenciones por técnico");
         System.out.println("10. Salir");
+        System.out.println();
         System.out.print("Seleccione una opción: ");
     }
 
