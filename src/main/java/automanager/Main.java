@@ -3,7 +3,6 @@ package automanager;
 import java.time.LocalDate;
 
 import automanager.modelo.Cliente;
-import automanager.modelo.EstadoOrden;
 import automanager.modelo.ItemOrdenServicio;
 import automanager.modelo.OrdenServicio;
 import automanager.modelo.Proveedor;
@@ -51,27 +50,27 @@ public class Main {
 
         // 6. Órdenes (con al menos dos servicios cada una)
         OrdenServicio os1 = new OrdenServicio(
-            sistema.buscarCliente("1701"), v1, sistema.buscarTecnico("1101"), LocalDate.of(2025, 4, 4), EstadoOrden.COMPLETADA);
+            sistema.buscarCliente("1701"), v1, sistema.buscarTecnico("1101"), LocalDate.of(2025, 4, 4));
         os1.agregarItem(new ItemOrdenServicio(sistema.buscarServicio("S001"), 1));
         os1.agregarItem(new ItemOrdenServicio(sistema.buscarServicio("S002"), 1));
         sistema.agregarOrdenServicio(os1);
 
         OrdenServicio os2 = new OrdenServicio(
-            sistema.buscarCliente("1799"), v2, sistema.buscarTecnico("1101"), LocalDate.of(2025, 4, 9), EstadoOrden.COMPLETADA);
+            sistema.buscarCliente("1799"), v2, sistema.buscarTecnico("1101"), LocalDate.of(2025, 4, 9));
         os2.agregarItem(new ItemOrdenServicio(sistema.buscarServicio("S003"), 1));
         os2.agregarItem(new ItemOrdenServicio(sistema.buscarServicio("S004"), 1));
         sistema.agregarOrdenServicio(os2);
 
         OrdenServicio os3 = new OrdenServicio(
             sistema.buscarCliente("1702"), new Vehiculo("LUC-789", TipoVehiculo.AUTOMOVIL),
-            sistema.buscarTecnico("1102"), LocalDate.of(2025, 5, 10), EstadoOrden.COMPLETADA);
+            sistema.buscarTecnico("1102"), LocalDate.of(2025, 5, 10));
         os3.agregarItem(new ItemOrdenServicio(sistema.buscarServicio("S005"), 1));
         os3.agregarItem(new ItemOrdenServicio(sistema.buscarServicio("S006"), 1));
         sistema.agregarOrdenServicio(os3);
 
         OrdenServicio os4 = new OrdenServicio(
             sistema.buscarCliente("1798"), new Vehiculo("TRN-999", TipoVehiculo.BUS),
-            sistema.buscarTecnico("1102"), LocalDate.of(2025, 5, 20), EstadoOrden.COMPLETADA);
+            sistema.buscarTecnico("1102"), LocalDate.of(2025, 5, 20));
         os4.agregarItem(new ItemOrdenServicio(sistema.buscarServicio("S006"), 1));
         os4.agregarItem(new ItemOrdenServicio(sistema.buscarServicio("S001"), 1));
         sistema.agregarOrdenServicio(os4);

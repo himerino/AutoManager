@@ -46,7 +46,8 @@ public class VistaPrincipal {
                     break;
                 case 5:
                     System.out.println("Generar orden de servicios...");
-                    // llamar a VistaOrdenServicio
+                    ControladorOrdenServicio co = new ControladorOrdenServicio(sistema);
+                    new VistaOrdenServicio(co);
                     break;
                 case 6:
                     System.out.println("Registrar falta de insumos...");

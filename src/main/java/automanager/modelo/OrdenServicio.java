@@ -12,12 +12,17 @@ public class OrdenServicio {
     private EstadoOrden estado;
     private ArrayList<ItemOrdenServicio> items;
 
-    public OrdenServicio(Cliente cliente, Vehiculo vehiculo, Tecnico tecnico, LocalDate fecha, EstadoOrden estado) {
+    public OrdenServicio(Cliente cliente, Vehiculo vehiculo, LocalDate fecha){
         this.cliente = cliente;
         this.vehiculo = vehiculo;
-        this.tecnico = tecnico;
         this.fecha = fecha;
         this.estado = EstadoOrden.PENDIENTE;
+        this.items = new ArrayList<>();
+    }
+
+    public OrdenServicio(Cliente cliente, Vehiculo vehiculo, Tecnico tecnico, LocalDate fecha) {
+        this(cliente, vehiculo, fecha);
+        this.tecnico = tecnico;
         this.items = new ArrayList<>();
     }
 
