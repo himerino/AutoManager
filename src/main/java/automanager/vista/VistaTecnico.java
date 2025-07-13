@@ -91,20 +91,20 @@ public class VistaTecnico {
 
         if (tecnico == null) {
             mostrarMensaje("No se encontró un técnico con esa identificación.");
-            return;
-        }
-
-        System.out.println("\nTécnico encontrado:");
-        System.out.printf("Nombre: %s\nTeléfono: %s\nEspecialidad: %s\n",
-                tecnico.getNombre(), tecnico.getTelefono(), tecnico.getEspecialidad());
-
-        System.out.print("¿Está seguro que desea eliminar este técnico? (s/n): ");
-        String confirmacion = scanner.nextLine();
-        if (confirmacion.equalsIgnoreCase("s")) {
-            controlador.eliminarTecnico(id);
-            mostrarMensaje("Técnico eliminado exitosamente.");
-        } else {
-            mostrarMensaje("Operación cancelada.");
+        }else{
+            System.out.println("\nTécnico encontrado:");
+            System.out.println();
+            System.out.printf("Nombre: %s\nTeléfono: %s\nEspecialidad: %s\n", 
+            tecnico.getNombre(), tecnico.getTelefono(), tecnico.getEspecialidad());
+            System.out.println();
+            System.out.print("¿Está seguro que desea eliminar este técnico? (s/n): ");
+            String confirmacion = scanner.nextLine();
+            if (confirmacion.equalsIgnoreCase("s")) {
+                controlador.eliminarTecnico(id);
+                mostrarMensaje("Técnico eliminado exitosamente.");
+            } else {
+                mostrarMensaje("Operación cancelada.");
+            }
         }
     }
 

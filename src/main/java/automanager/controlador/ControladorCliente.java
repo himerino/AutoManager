@@ -16,18 +16,9 @@ public class ControladorCliente {
     }
 
     public MensajeUsuario agregarCliente(String id, String nombre, String direccion, String telefono, TipoCliente tipo) {
-        if (buscarClientePorId(id) != null) return new MensajeUsuario("Agregar Cliente", "Ya existe un cliente con esa identificación.");
+        if (sistema.buscarCliente(id) != null) return new MensajeUsuario("Agregar Cliente", "Ya existe un cliente con esa identificación.");
         Cliente c= new Cliente(id, nombre, telefono, direccion, tipo);
-        sistema.getClientes().add(c);
-        return null;
-    }
-
-    public Cliente buscarClientePorId(String id) {
-        for (Cliente c : sistema.getClientes()) {
-            if (c.getId().equals(id)) {
-                return c;
-            }
-        }
+        sistema.agregarCliente(c);
         return null;
     }
 

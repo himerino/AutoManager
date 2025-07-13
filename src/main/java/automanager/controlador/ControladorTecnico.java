@@ -14,21 +14,17 @@ public class ControladorTecnico {
         }
 
         public MensajeUsuario agregarTecnico(String id, String nombre, String telefono, String especialidad) {
-            if (buscarTecnicoPorId(id) != null) {
+            if (sistema.buscarTecnico(id) != null) {
                 return new MensajeUsuario("Agregar Técnico", "Ya existe un técnico con esa identificación.");
             }
             Tecnico tecnico = new Tecnico(id, nombre, telefono, especialidad);
-            sistema.getTecnicos().add(tecnico);
+            sistema.agregarTecnico(tecnico);
             return null;
         }
 
-        public MensajeUsuario eliminarTecnico(String id) {
-            Tecnico tecnico = buscarTecnicoPorId(id);
-            if (tecnico == null) {
-                return new MensajeUsuario("Eliminar Técnico", "No existe un técnico con esa identificación.");
-            }
-            sistema.getTecnicos().remove(tecnico);
-            return null;
+        public void eliminarTecnico(String id) {
+            Tecnico tecnico = sistema.buscarTecnico(id);
+            sistema.eliminarTecnico(tecnico);
         }
 
         public Tecnico buscarTecnicoPorId(String id) {
@@ -41,4 +37,5 @@ public class ControladorTecnico {
         public ArrayList<Tecnico> getListaTecnicos() {
             return sistema.getTecnicos();
         }
+        
 }

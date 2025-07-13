@@ -13,20 +13,17 @@ public class VistaServicio {
     public VistaServicio(ControladorServicio controlador) {
         this.controlador = controlador;
         this.scanner = new Scanner(System.in);
-        mostrarMenu();
+        iniciar();
     }
-
-    public void mostrarMenu() {
+    
+    public void iniciar() {
         int opcion;
         do {
-            System.out.println("\n--- Administración de Servicios ---");
-            listarServicios();
-            System.out.println("\nOpciones:");
-            System.out.println("1. Agregar Servicio");
-            System.out.println("2. Editar Servicio");
-            System.out.println("3. Regresar al menú principal");
-            System.out.print("Seleccione una opción: ");
-            opcion = Integer.parseInt(scanner.nextLine());
+            mostrarServicios();
+            mostrarSubmenu();
+            opcion = scanner.nextInt();
+            System.out.println();
+            scanner.nextLine();
 
             switch (opcion) {
                 case 1:
@@ -45,41 +42,60 @@ public class VistaServicio {
         } while (opcion != 3);
     }
 
-    private void listarServicios() {
-        ArrayList<Servicio> servicios = controlador.obtenerServicios();
+    private void mostrarSubmenu(){
+        System.out.println("===== Menú de Servicios =====");
+            System.out.println();
+            System.out.println("1. Agregar Servicio");
+            System.out.println("2. Editar Servicio");
+            System.out.println("3. Regresar al menú principal");
+            System.out.println();
+            System.out.print("Seleccione una opción: ");
+    }
+
+    private void mostrarServicios() {
+        ArrayList<Servicio> servicios = controlador.getListaServicios();
         if (servicios.isEmpty()) {
-            System.out.println("No hay servicios registrados.");
+            System.out.println("\nNo hay servicios registrados.\n");
             return;
         }
-        System.out.println("\nCódigo | Nombre | Precio");
+        System.out.printf("\n%-10s %-25s %-10s\n", "Código", "Nombre", "Precio");
+        System.out.println("-".repeat(45));
         for (Servicio s : servicios) {
-            System.out.printf("%s | %s | %.2f\n", s.getCodigo(), s.getNombre(), s.getPrecioActual());
+            System.out.printf("%-10s %-25s $%.2f\n", s.getCodigo(), s.getNombre(), s.getPrecioActual());
         }
+        System.out.println();
     }
 
     private void agregarServicio() {
-        System.out.println("\n--- Agregar Nuevo Servicio ---");
         System.out.print("Nombre del servicio: ");
         String nombre = scanner.nextLine();
         System.out.print("Precio del servicio: ");
         double precio = Double.parseDouble(scanner.nextLine());
 
-        Servicio nuevo = controlador.agregarServicio(nombre, precio);
-        System.out.println("Servicio agregado exitosamente con código: " + nuevo.getCodigo());
-    }
-
-    private void editarServicio() {
-        System.out.println("\n--- Editar Servicio (Precio) ---");
-        System.out.print("Ingrese el código del servicio: ");
-        String codigo = scanner.nextLine();
-        System.out.print("Nuevo precio: ");
-        double nuevoPrecio = Double.parseDouble(scanner.nextLine());
-
-        boolean actualizado = controlador.editarPrecioServicio(codigo, nuevoPrecio);
-        if (actualizado) {
-            System.out.println("Precio actualizado correctamente.");
-        } else {
-            System.out.println("Servicio no encontrado.");
+        MensajeUsuario mensaje = controlador.agregarServicio(nombre, precio);
+        if (mensaje != null){
+            mostrarMensaje(mensaje.toString());
+        }else{
+            mostrarMensaje("Servicio agregado exitosamente.");
         }
     }
+    
+    private void editarServicio() {
+        System.out.print("Ingrese el código del servicio: ");
+        String codigo = scanner.nextLine();
+        System.out.print("Ingrese el nuevo precio: ");
+        double nuevoPrecio = Double.parseDouble(scanner.nextLine());
+
+        MensajeUsuario mensaje = controlador.editarPrecioServicio(codigo, nuevoPrecio);
+        if (mensaje != null){
+            mostrarMensaje(mensaje.toString());
+        }else{
+            System.out.println("Precio actualizado correctamente.");
+        }
+    }
+
+    private void mostrarMensaje(String mensaje) {
+        System.out.println(mensaje);
+    }
+
 }

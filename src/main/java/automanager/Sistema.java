@@ -48,6 +48,10 @@ public class Sistema {
         tecnicos.add(tecnico);
     }
 
+    public void eliminarTecnico(Tecnico tecnico){
+        tecnicos.remove(tecnico);
+    }
+
     public ArrayList<Tecnico> getTecnicos() {
         return tecnicos;
     }

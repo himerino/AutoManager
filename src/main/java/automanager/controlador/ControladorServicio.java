@@ -3,6 +3,7 @@ package automanager.controlador;
 import java.util.ArrayList;
 
 import automanager.modelo.Servicio;
+import automanager.vista.MensajeUsuario;
 import automanager.Sistema;
 
 public class ControladorServicio {
@@ -12,25 +13,26 @@ public class ControladorServicio {
         this.sistema = sistema;
     }
 
-    public ArrayList<Servicio> obtenerServicios() {
+    public ArrayList<Servicio> getListaServicios() {
         return sistema.getServicios();
     }
 
-    public Servicio agregarServicio(String nombre, double precio) {
-        String nuevoCodigo = generarCodigoServicio();
-        Servicio nuevoServicio = new Servicio(nuevoCodigo, nombre, precio);
-        sistema.agregarServicio(nuevoServicio);
-        return nuevoServicio;
+    public MensajeUsuario agregarServicio(String nombre, double precio){
+        for (Servicio s : sistema.getServicios()){
+            if (s.getNombre().equals(nombre)) return new MensajeUsuario("Agregar Servicio", "Ya existe un servicio con ese nombre.");
+        }
+        String codigo = generarCodigoServicio();
+        Servicio servicio = new Servicio(codigo, nombre, precio);
+        sistema.agregarServicio(servicio);
+        return null;
     }
 
-    public boolean editarPrecioServicio(String codigo, double nuevoPrecio) {
+    public MensajeUsuario editarPrecioServicio(String codigo, double nuevoPrecio) {
         Servicio servicio = sistema.buscarServicio(codigo);
-        if (servicio != null) {
-            servicio.registrarPrecioEnHistorial(servicio.getPrecioActual());
-            servicio.setPrecioActual(nuevoPrecio);
-            return true;
-        }
-        return false;
+        if (servicio == null) return new MensajeUsuario("Editar Precio del Servicio", "Servicio no encontrado.");
+        servicio.registrarPrecioEnHistorial(servicio.getPrecioActual());
+        servicio.setPrecioActual(nuevoPrecio);
+        return null;
     }
 
     private String generarCodigoServicio() {
@@ -44,4 +46,5 @@ public class ControladorServicio {
         }
         return "S" + String.format("%03d", max + 1);
     }
+    
 }

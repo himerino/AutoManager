@@ -15,7 +15,7 @@ public class ControladorProveedor {
     }
 
     public MensajeUsuario agregarProveedor(String id, String nombre, String telefono, String descripcion) {
-        if (buscarProveedorPorId(id) != null) {
+        if (sistema.buscarProveedor(id) != null) {
             return new MensajeUsuario("Agregar Proveedor", "Ya existe un proveedor con esa identificación.");
         }
         Proveedor proveedor = new Proveedor(id, nombre, telefono, descripcion);
@@ -23,14 +23,8 @@ public class ControladorProveedor {
         return null;
     }
 
-    public Proveedor buscarProveedorPorId(String id) {
-        for (Proveedor p : sistema.getProveedores()) {
-            if (p.getId().equals(id)) return p;
-        }
-        return null;
-    }
-
     public ArrayList<Proveedor> getListaProveedores() {
         return sistema.getProveedores();
     }
+    
 }
