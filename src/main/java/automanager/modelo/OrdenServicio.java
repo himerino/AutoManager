@@ -4,14 +4,16 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class OrdenServicio {
-    
+
+    // Variables de instancia 
     private Cliente cliente;
     private Vehiculo vehiculo;
     private Tecnico tecnico;
     private LocalDate fecha;
-    private EstadoOrden estado;
-    private ArrayList<ItemOrdenServicio> items;
+    private EstadoOrden estado; // Enum de estado de la orden
+    private ArrayList<ItemOrdenServicio> items; // Lista de items de la orden
 
+    // Constructores
     public OrdenServicio(Cliente cliente, Vehiculo vehiculo, LocalDate fecha){
         this.cliente = cliente;
         this.vehiculo = vehiculo;
@@ -20,12 +22,14 @@ public class OrdenServicio {
         this.items = new ArrayList<>();
     }
 
+        // Sobrecarga del constructor
     public OrdenServicio(Cliente cliente, Vehiculo vehiculo, Tecnico tecnico, LocalDate fecha) {
         this(cliente, vehiculo, fecha);
         this.tecnico = tecnico;
         this.items = new ArrayList<>();
     }
 
+    // Getters
     public Cliente getCliente() {
         return cliente;
     }
@@ -50,6 +54,7 @@ public class OrdenServicio {
         return items;
     }
 
+    // Setters
     public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
     }
@@ -58,10 +63,12 @@ public class OrdenServicio {
         this.estado = estado;
     }
 
+    //Agregar item a la lista de items de la orden
     public void agregarItem(ItemOrdenServicio item) {
         items.add(item);
     }
 
+    // Calcular el total de la suma de los valores a pagar por cada item
     public double calcularTotal() {
         double total = 0;
         for (ItemOrdenServicio item : items) {

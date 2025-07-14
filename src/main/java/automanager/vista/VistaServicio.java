@@ -11,11 +11,12 @@ public class VistaServicio {
     private Scanner scanner;
 
     public VistaServicio(ControladorServicio controlador) {
-        this.controlador = controlador;
+        this.controlador = controlador; // Para poder acceder a la instancia de controlador de servicio creada en la clase VistaPrincipal 
         this.scanner = new Scanner(System.in);
         iniciar();
     }
     
+    // Metodo para poder navegar entre las opciones para administrar servicios
     public void iniciar() {
         int opcion;
         do {
@@ -42,6 +43,7 @@ public class VistaServicio {
         } while (opcion != 3);
     }
 
+    // Mostrar submenu de opciones para administrar servicios
     private void mostrarSubmenu(){
         System.out.println("===== Menú de Servicios =====");
             System.out.println();
@@ -52,6 +54,7 @@ public class VistaServicio {
             System.out.print("Seleccione una opción: ");
     }
 
+    // Mostrar servicios existentes en el sistema
     private void mostrarServicios() {
         ArrayList<Servicio> servicios = controlador.getListaServicios();
         if (servicios.isEmpty()) {
@@ -66,6 +69,7 @@ public class VistaServicio {
         System.out.println();
     }
 
+    // Pedir datos al usuario para agregar servicio al sistema a traves del controlador
     private void agregarServicio() {
         System.out.print("Nombre del servicio: ");
         String nombre = scanner.nextLine();
@@ -80,6 +84,7 @@ public class VistaServicio {
         }
     }
     
+    // Pedir datos al usuario para editar el precio del servicio requerido a traves del controlador
     private void editarServicio() {
         System.out.print("Ingrese el código del servicio: ");
         String codigo = scanner.nextLine();
@@ -94,6 +99,7 @@ public class VistaServicio {
         }
     }
 
+    // Mostrar mensaje al usuario
     private void mostrarMensaje(String mensaje) {
         System.out.println(mensaje);
     }

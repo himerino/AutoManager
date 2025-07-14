@@ -10,11 +10,12 @@ public class VistaFactura {
     private Scanner scanner;
 
     public VistaFactura(ControladorFactura controlador) {
-        this.controlador = controlador;
+        this.controlador = controlador; // Para poder acceder a la instancia de controlador de factura creada en la clase VistaPrincipal 
         this.scanner = new Scanner(System.in);
         iniciar();
     }
 
+    // Generar factura empresarial a traves de los metodos del controlador de factura instanciado
     public void iniciar() {
         System.out.println("\n--- GENERAR FACTURA EMPRESARIAL ---");
         System.out.println();

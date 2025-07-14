@@ -10,9 +10,10 @@ public class ControladorReporteTecnico {
     private Sistema sistema;
 
     public ControladorReporteTecnico(Sistema sistema) {
-        this.sistema = sistema;
+        this.sistema = sistema; // Para poder acceder a la instancia del sistema creada en la clase Main
     }
 
+    // Generar el reporte de atenciones por tecnicos correspondientes al mes y año ingresados por el usuario en la clase VistaReporteTecnio
     public Map<String, Double> generarReporteTecnico(int mes, int anio) {
         Map<String, Double> ingresosPorTecnico = new HashMap<>();
 

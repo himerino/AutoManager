@@ -10,11 +10,12 @@ public class VistaReporteServicio {
     private Scanner scanner;
 
     public VistaReporteServicio(ControladorReporteServicio controlador) {
-        this.controlador = controlador;
+        this.controlador = controlador; // Para poder acceder a la instancia de controlador de reporte de servicios creada en la clase VistaPrincipal 
         this.scanner = new Scanner(System.in);
         iniciar();
     }
 
+    // Pedir al usuario los datos necesarios para generar el reporte a traves del controlador
     public void iniciar() {
         System.out.println("\n--- Reporte de Ingresos por Servicio ---");
         System.out.println();

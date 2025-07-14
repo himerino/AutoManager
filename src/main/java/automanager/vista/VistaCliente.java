@@ -13,11 +13,12 @@ public class VistaCliente {
     private Scanner scanner;
 
     public VistaCliente(ControladorCliente controlador) {
-        this.controlador=controlador;
+        this.controlador=controlador; // Para poder acceder a la instancia de controlador de cliente creada en la clase VistaPrincipal 
         this.scanner = new Scanner(System.in);
         iniciar();
     }
 
+    // Método para poder navegar entra las opciones para administrar a los clientes
     public void iniciar() {
         int opcion;
         do {
@@ -35,6 +36,7 @@ public class VistaCliente {
         } while (opcion != 2);
     }
 
+    // Mostrar los clientes registrados en el sistema
     private void mostrarClientes() {
         ArrayList<Cliente> clientes = controlador.getListaClientes();
         if (clientes.isEmpty()) {
@@ -50,6 +52,7 @@ public class VistaCliente {
         }
     }
 
+    // Mostrar el submenu de las opciones para administrar clientes
     private void mostrarSubmenu() {
         System.out.println("===== Menú de Clientes =====");
         System.out.println();
@@ -59,6 +62,7 @@ public class VistaCliente {
         System.out.print("Seleccione una opción: ");
     }
 
+    // Pedir datos al usuario para agregar cliente al sistema a traves del controlador de cliente
     private void agregarCliente() {
         System.out.print("Identificación: ");
         String id = scanner.nextLine();
@@ -78,6 +82,7 @@ public class VistaCliente {
         }
     }
 
+    // Pedir al usuario que seleccione el tipo de cliente para la nueva instancia de este
     private TipoCliente leerTipoCliente() {
         while (true) {
             System.out.print("Tipo de cliente (1. PERSONAL, 2. EMPRESARIAL): ");
@@ -91,6 +96,7 @@ public class VistaCliente {
         }
     }
 
+    // Sirve para mostrar mensajes al cliente
     private void mostrarMensaje(String mensaje) {
         System.out.println(mensaje);
     }

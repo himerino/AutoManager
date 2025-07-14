@@ -11,6 +11,7 @@ import automanager.modelo.Tecnico;
 
 public class Sistema {
 
+    // Listas de objetos del sistema
     private ArrayList<Cliente> clientes;
     private ArrayList<Tecnico> tecnicos;
     private ArrayList<Proveedor> proveedores;

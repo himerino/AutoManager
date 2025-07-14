@@ -8,12 +8,13 @@ import java.util.*;
 
 public class ControladorReporteServicio {
     
-    private Sistema sistema;
+    private Sistema sistema; 
 
     public ControladorReporteServicio(Sistema sistema) {
-        this.sistema = sistema;
+        this.sistema = sistema; // Para poder acceder a la instancia del sistema creada en la clase Main
     }
 
+    // Generar el reporte de ingresos por servicios correspondientes al mes y año ingresados por el usuario en la clase VistaReporteServicio
     public Map<String, Double> generarReporteServicio(int mes, int anio) {
         Map<String, Double> ingresosPorServicio = new HashMap<>();
 

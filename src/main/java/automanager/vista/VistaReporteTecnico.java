@@ -10,11 +10,12 @@ public class VistaReporteTecnico {
     private Scanner scanner;
 
     public VistaReporteTecnico(ControladorReporteTecnico controlador) {
-        this.controlador = controlador;
+        this.controlador = controlador; // Para poder acceder a la instancia de controlador de reporte de tecnicos creada en la clase VistaPrincipal 
         this.scanner = new Scanner(System.in);
         iniciar();
     }
 
+    // Pedir al usuario los datos necesarios para generar el reporte a traves del controlador
     public void iniciar() {
         System.out.println("\n--- Reporte de Ingresos por Técnico ---");
         System.out.println();

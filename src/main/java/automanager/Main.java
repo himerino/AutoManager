@@ -15,12 +15,14 @@ import automanager.vista.VistaPrincipal;
 
 public class Main {
     public static void main(String[] args) {
-        Sistema sistema = new Sistema();
+        Sistema sistema = new Sistema(); // Crear instancia de Sistema
         inicializarApp(sistema);
         new VistaPrincipal(sistema);
          
         
     }
+
+    // Agregar objetos al sistema 
     public static void inicializarApp(Sistema sistema) {
         // 1. Técnicos
         sistema.agregarTecnico(new Tecnico("1101", "Mario Barcos", "0999001122", "Frenos"));

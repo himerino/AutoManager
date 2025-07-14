@@ -12,11 +12,12 @@ public class VistaProveedor {
     private Scanner scanner;
 
     public VistaProveedor(ControladorProveedor controlador) {
-        this.controlador = controlador;
+        this.controlador = controlador; // Para poder acceder a la instancia de controlador de proveedor creada en la clase VistaPrincipal 
         this.scanner = new Scanner(System.in);
         iniciar();
     }
 
+    // Metodo para poder navegar entre las opciones para administrar proveedores
     public void iniciar() {
         int opcion;
         do {
@@ -34,6 +35,7 @@ public class VistaProveedor {
         } while (opcion != 2);
     }
 
+    // Mostrar los proveedores existentes en el sistema
     private void mostrarProveedores() {
         ArrayList<Proveedor> proveedores = controlador.getListaProveedores();
         if (proveedores.isEmpty()) {
@@ -49,6 +51,7 @@ public class VistaProveedor {
         }
     }
 
+    // Mostrar submenu de las opciones para administrar proveedores
     private void mostrarSubmenu() {
         System.out.println("===== Menú de Proveedores =====");
         System.out.println();
@@ -58,6 +61,7 @@ public class VistaProveedor {
         System.out.print("\nSeleccione una opción: ");
     }
 
+    // Pedir datos al usuario para agregar proveedor al sistema a traves del controlador del porveedor
     private void agregarProveedor() {
         System.out.print("Identificación: ");
         String id = scanner.nextLine();
@@ -76,6 +80,7 @@ public class VistaProveedor {
         }
     }
 
+    // Mostrar mensaje al usuario
     private void mostrarMensaje(String mensaje) {
         System.out.println(mensaje);
     }

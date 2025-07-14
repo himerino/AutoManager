@@ -11,11 +11,12 @@ public class VistaTecnico {
     private Scanner scanner;
 
     public VistaTecnico(ControladorTecnico controlador) {
-        this.controlador = controlador;
+        this.controlador = controlador; // Para poder acceder a la instancia de controlador de tecnico creada en la clase VistaPrincipal 
         this.scanner = new Scanner(System.in);
         iniciar();
     }
 
+    // Metodo para poder navegar a traves de las opciones del administrador de tecnicos
     public void iniciar() {
         int opcion;
         do {
@@ -41,6 +42,7 @@ public class VistaTecnico {
         } while (opcion != 3);
     }
 
+    // Mostrar los tecnicos existentes en el sistema
     private void mostrarTecnicos() {
         ArrayList<Tecnico> tecnicos = controlador.getListaTecnicos();
         if (tecnicos.isEmpty()) {
@@ -56,6 +58,7 @@ public class VistaTecnico {
         }
     }
 
+    // Mostrar submenu de las opciones para administrar tecnicos
     private void mostrarSubmenu() {
         System.out.println("===== Menú de Técnicos =====");
         System.out.println();
@@ -66,6 +69,7 @@ public class VistaTecnico {
         System.out.print("\nSeleccione una opción: ");
     }
 
+    // Pedir datos al usuario para agregar tecnico al sistema a traves del controlador
     private void agregarTecnico() {
         System.out.print("Identificación: ");
         String id = scanner.nextLine();
@@ -84,6 +88,7 @@ public class VistaTecnico {
         }
     }
 
+    // Pedir datos al usuario para eliminar tecnico del sistema a traves del controlador
     private void eliminarTecnico() {
         System.out.print("Ingrese la identificación del técnico a eliminar: ");
         String id = scanner.nextLine();
@@ -108,6 +113,7 @@ public class VistaTecnico {
         }
     }
 
+    // Mostrar mensaje al usuario
     private void mostrarMensaje(String mensaje) {
         System.out.println("\n" + mensaje + "\n");
     }

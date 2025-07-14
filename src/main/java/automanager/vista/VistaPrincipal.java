@@ -8,14 +8,15 @@ import java.util.Scanner;
 public class VistaPrincipal {
 
     private Scanner scanner;
-    private Sistema sistema;
+    private Sistema sistema; 
 
     public VistaPrincipal(Sistema sistema) {
-        this.sistema=sistema;
+        this.sistema=sistema; // Para poder acceder a la instancia de sistema creada en la clase Main
         this.scanner = new Scanner(System.in);
         iniciar();
     }
 
+    // Método para poder navegar entre las opciones del menú 
     public void iniciar() {
         int opcion;
         do {
@@ -77,7 +78,8 @@ public class VistaPrincipal {
         } while (opcion != 10);
         scanner.close();
     }
-    
+
+    // Mostrar el menú     
     private void mostrarMenu() {
         System.out.println("\n========= MENÚ PRINCIPAL =========");
         System.out.println();

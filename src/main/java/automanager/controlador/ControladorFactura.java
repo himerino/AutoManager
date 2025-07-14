@@ -12,30 +12,35 @@ public class ControladorFactura {
     private Cliente cliente;
 
     public ControladorFactura(Sistema sistema) {
-        this.sistema= sistema;
+        this.sistema= sistema; // Para poder acceder a la instancia del Sistema creada en la clase Main
     }
 
+    // Método que genera la factura a partir de los datos ingresados por el usuario en la clase VistaFactura  
     public Factura generarFactura(String idCliente, int anio, int mes) {
         factura=null;
         cliente=null;
 
+        // Buscar la orden correspondiente a los datos solicitados
         for (OrdenServicio orden : sistema.getOrdenes()) {
             if (orden.getCliente().getId().equals(idCliente) &&
                 orden.getFecha().getYear() == anio &&
                 orden.getFecha().getMonthValue() == mes) {
 
-                cliente=orden.getCliente();
+                cliente=orden.getCliente(); // Obtener cliente correspondiente a esa orden
                 
-                if (cliente.getTipo() != TipoCliente.EMPRESARIAL) return null;
+                if (cliente.getTipo() != TipoCliente.EMPRESARIAL) return null; // Validar que el cliente sea de tipo empresarial
+                // Crear la factura
                 factura = new Factura(cliente, LocalDate.of(anio, mes,orden.getFecha().getDayOfMonth()));
-                factura.agregarOrden(orden);
+                factura.agregarOrden(orden); // Agregar la orden a la factura
             }
         }
 
         return factura;
     }
 
+    // Generar detalle de la factura
     public String generarDetalleFactura(Factura factura) {
+        // Validar que la factura exista
         if (factura == null) {
             if (cliente != null && cliente.getTipo()!=TipoCliente.EMPRESARIAL) return "El cliente no es de tipo empresarial.";
             return "No se encontraron órdenes para ese cliente empresarial en el período especificado.";
