@@ -35,6 +35,7 @@ public class VistaOrdenServicio {
         System.out.print("Ingrese la placa del vehículo: ");
         String placa = scanner.nextLine();
         System.out.println();
+        
         // Crear vehiculo para utilizarlo como parametro para generar nueva orden de servicios
         Vehiculo vehiculo = new Vehiculo(placa.toUpperCase(), tipo); 
 
@@ -47,6 +48,7 @@ public class VistaOrdenServicio {
         }else {
             // Al utilizar el siguiente metodo se valida la existencia de servicios a partir de los codigos ingresados
             agregarServicios(orden);
+            
             // En de solo haber ingresado codigos no validos
             if ((orden.getItems()).isEmpty()) {
                 System.out.println("No se agregaron servicios a la orden.");

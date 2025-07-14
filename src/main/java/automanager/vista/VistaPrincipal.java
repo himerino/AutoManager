@@ -27,47 +27,48 @@ public class VistaPrincipal {
             switch (opcion) {
                 case 1:
                     System.out.println("Administrar clientes...");
-                    ControladorCliente cc = new ControladorCliente(sistema);
-                    new VistaCliente(cc);
+                    ControladorCliente controladorCliente = new ControladorCliente(sistema);
+                    new VistaCliente(controladorCliente);
                     break;
                 case 2:
                     System.out.println("Administrar proveedores...");
-                    ControladorProveedor cp = new ControladorProveedor(sistema);
-                    new VistaProveedor(cp);
+                    ControladorProveedor controladorProveedor = new ControladorProveedor(sistema);
+                    new VistaProveedor(controladorProveedor);
                     break;
                 case 3:
                     System.out.println("Administrar técnicos...");
-                    ControladorTecnico ct = new ControladorTecnico(sistema);
-                    new VistaTecnico(ct);
+                    ControladorTecnico controladorTecnico = new ControladorTecnico(sistema);
+                    new VistaTecnico(controladorTecnico);
                     break;
                 case 4:
                     System.out.println("Administrar servicios...");
-                    ControladorServicio cs = new ControladorServicio(sistema);
-                    new VistaServicio(cs);
+                    ControladorServicio controladorServicio = new ControladorServicio(sistema);
+                    new VistaServicio(controladorServicio);
                     break;
                 case 5:
                     System.out.println("Generar orden de servicios...");
-                    ControladorOrdenServicio co = new ControladorOrdenServicio(sistema);
-                    new VistaOrdenServicio(co);
+                    ControladorOrdenServicio controladorOrdenServicio = new ControladorOrdenServicio(sistema);
+                    new VistaOrdenServicio(controladorOrdenServicio);
                     break;
                 case 6:
                     System.out.println("Registrar falta de insumos...");
-                    // llamar a VistaFaltaInsumo
+                    ControladorFaltaInsumo controladorFaltaInsumo = new ControladorFaltaInsumo(sistema);
+                    new VistaFaltaInsumo(controladorFaltaInsumo);
                     break;
                 case 7:
                     System.out.println("Generar facturas a empresas...");
-                    ControladorFactura cf= new ControladorFactura(sistema);
-                    new VistaFactura(cf);
+                    ControladorFactura controladorFactura= new ControladorFactura(sistema);
+                    new VistaFactura(controladorFactura);
                     break;
                 case 8:
                     System.out.println("Reporte de ingresos por servicios...");
-                    ControladorReporteServicio crs = new ControladorReporteServicio(sistema);
-                    new VistaReporteServicio(crs);
+                    ControladorReporteServicio controladorReporteServicio = new ControladorReporteServicio(sistema);
+                    new VistaReporteServicio(controladorReporteServicio);
                     break;
                 case 9:
                     System.out.println("Reporte de atenciones por técnico...");
-                    ControladorReporteTecnico crt = new ControladorReporteTecnico(sistema);
-                    new VistaReporteTecnico(crt);
+                    ControladorReporteTecnico controladorReporteTecnico = new ControladorReporteTecnico(sistema);
+                    new VistaReporteTecnico(controladorReporteTecnico);
                     break;
                 case 10:
                     System.out.println("Saliendo de la aplicación...");

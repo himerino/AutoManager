@@ -38,17 +38,13 @@ public class VistaProveedor {
     // Mostrar los proveedores existentes en el sistema
     private void mostrarProveedores() {
         ArrayList<Proveedor> proveedores = controlador.getListaProveedores();
-        if (proveedores.isEmpty()) {
-            System.out.println("\nNo hay proveedores registrados.\n");
-        } else {
-            System.out.printf("\n%-15s %-20s %-15s %-30s\n", "Identificación", "Nombre", "Teléfono", "Descripción");
-            System.out.println("-".repeat(85));
-            for (Proveedor p : proveedores) {
-                System.out.printf("%-15s %-20s %-15s %-30s\n",
-                        p.getId(), p.getNombre(), p.getTelefono(), p.getDescripcion());
-            }
-            System.out.println();
+        System.out.printf("\n%-15s %-20s %-15s %-30s\n", "Identificación", "Nombre", "Teléfono", "Descripción");
+        System.out.println("-".repeat(85));
+        for (Proveedor p : proveedores) {
+            System.out.printf("%-15s %-20s %-15s %-30s\n",
+            p.getId(), p.getNombre(), p.getTelefono(), p.getDescripcion());
         }
+        System.out.println();
     }
 
     // Mostrar submenu de las opciones para administrar proveedores

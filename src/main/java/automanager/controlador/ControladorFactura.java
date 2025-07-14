@@ -29,6 +29,7 @@ public class ControladorFactura {
                 cliente=orden.getCliente(); // Obtener cliente correspondiente a esa orden
                 
                 if (cliente.getTipo() != TipoCliente.EMPRESARIAL) return null; // Validar que el cliente sea de tipo empresarial
+                
                 // Crear la factura
                 factura = new Factura(cliente, LocalDate.of(anio, mes,orden.getFecha().getDayOfMonth()));
                 factura.agregarOrden(orden); // Agregar la orden a la factura
@@ -40,6 +41,7 @@ public class ControladorFactura {
 
     // Generar detalle de la factura
     public String generarDetalleFactura(Factura factura) {
+        
         // Validar que la factura exista
         if (factura == null) {
             if (cliente != null && cliente.getTipo()!=TipoCliente.EMPRESARIAL) return "El cliente no es de tipo empresarial.";

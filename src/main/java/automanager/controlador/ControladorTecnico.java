@@ -15,6 +15,7 @@ public class ControladorTecnico {
 
         // Crear y agregar tecnico a la lista de tecnicos del sistema a partir de los datos ingresados por el usuario en la clase VistaTecnico
         public MensajeUsuario agregarTecnico(String id, String nombre, String telefono, String especialidad) {
+            
             // Validar si ya existe el tecnico en el sistema
             if (sistema.buscarTecnico(id) != null) {
                 return new MensajeUsuario("Agregar Técnico", "Ya existe un técnico con esa identificación.");

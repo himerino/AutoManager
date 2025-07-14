@@ -20,6 +20,7 @@ public class ControladorServicio {
 
     // Crear y agregar servicio a la lista de servicios del sistema a partir de los datos ingresados por el usuario en la clase VistaServicio
     public MensajeUsuario agregarServicio(String nombre, double precio){
+        
         // Validar si el servicio ya existe en el sistema
         for (Servicio s : sistema.getServicios()){
             if (s.getNombre().equals(nombre)) return new MensajeUsuario("Agregar Servicio", "Ya existe un servicio con ese nombre.");

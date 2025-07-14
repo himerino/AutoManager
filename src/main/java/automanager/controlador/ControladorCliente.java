@@ -17,6 +17,7 @@ public class ControladorCliente {
 
     // Método que crea cliente a partir de los datos ingresados por el usuario en la clase VistaCliente y lo agrega a la lista de clientes del sistema
     public MensajeUsuario agregarCliente(String id, String nombre, String direccion, String telefono, TipoCliente tipo) {
+        
         // Verificar si el cliente ya existe dentro de la lista de clientes del sitema
         if (sistema.buscarCliente(id) != null) return new MensajeUsuario("Agregar Cliente", "Ya existe un cliente con esa identificación.");
         Cliente c= new Cliente(id, nombre, telefono, direccion, tipo);

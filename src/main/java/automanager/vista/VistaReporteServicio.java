@@ -28,7 +28,7 @@ public class VistaReporteServicio {
         Map<String, Double> reporte = controlador.generarReporteServicio(mes, anio);
 
         System.out.printf("%-30s %-10s\n", "Servicio", "Total");
-        System.out.println("-------------------------------------------");
+        System.out.println("-".repeat(45));
         for (Map.Entry<String, Double> entry : reporte.entrySet()) {
             System.out.printf("%-30s $%.2f\n", entry.getKey(), entry.getValue());
         }
