@@ -20,6 +20,9 @@ public class VistaOrdenServicio {
         iniciar();
     }
 
+    // En el proyecto en android studio se deberia poner una opcion para agregar tecnico a la orden y así no se caiga cuando se quiere generar
+    // Reporte de ingreso por tecnico
+
     // Generar orden de servicio a partir de los metodos del contructor de orden de servicio, y demas metodos de la clase
     public void iniciar(){
         System.out.println("\n--- GENERAR ORDEN DE SERVICIO ---");

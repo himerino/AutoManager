@@ -13,7 +13,7 @@ public class OrdenServicio {
     private EstadoOrden estado; // Enum de estado de la orden
     private ArrayList<ItemOrdenServicio> items; // Lista de items de la orden
 
-    // Constructores
+    // Constructores ESTE YA NO
     public OrdenServicio(Cliente cliente, Vehiculo vehiculo, LocalDate fecha){
         this.cliente = cliente;
         this.vehiculo = vehiculo;
