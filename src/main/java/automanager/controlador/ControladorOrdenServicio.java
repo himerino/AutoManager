@@ -1,12 +1,14 @@
 package automanager.controlador;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 import automanager.Sistema;
 import automanager.modelo.ItemOrdenServicio;
 import automanager.modelo.OrdenServicio;
 import automanager.modelo.Vehiculo;
 import automanager.modelo.Servicio;
+import automanager.modelo.Tecnico;
 
 public class ControladorOrdenServicio {
     private Sistema sistema;
@@ -17,9 +19,9 @@ public class ControladorOrdenServicio {
     }
 
     // Crear orden de servicio a partir de los datos ingresados por el usuario en la clase VistaOrdenServicio
-    public OrdenServicio generaOrdenServicio(String id, LocalDate fecha, Vehiculo vehiculo){
+    public OrdenServicio generaOrdenServicio(String id, LocalDate fecha, Vehiculo vehiculo, Tecnico tecnico){
         if (sistema.buscarCliente(id)==null) return null; // Si el cliente no existe de vuelve nulo
-        OrdenServicio orden = new OrdenServicio(sistema.buscarCliente(id), vehiculo, fecha);
+        OrdenServicio orden = new OrdenServicio(sistema.buscarCliente(id), vehiculo, tecnico, fecha);
         return orden;
     }
 
@@ -34,6 +36,11 @@ public class ControladorOrdenServicio {
     // Agregar la orden de servicio a la lista de ordenes de servicio del sistema
     public void agregarOrdenServicio(OrdenServicio orden){
         sistema.agregarOrdenServicio(orden);
+    }
+
+    // OBTENER LA LISTA DE TECNICOS DEL SISTEMA
+    public ArrayList<Tecnico> getTecnicos() {
+        return sistema.getTecnicos();
     }
     
 }

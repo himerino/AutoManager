@@ -13,18 +13,12 @@ public class OrdenServicio {
     private EstadoOrden estado; // Enum de estado de la orden
     private ArrayList<ItemOrdenServicio> items; // Lista de items de la orden
 
-    // Constructores ESTE YA NO
-    public OrdenServicio(Cliente cliente, Vehiculo vehiculo, LocalDate fecha){
+    
+        //  constructor
+    public OrdenServicio(Cliente cliente, Vehiculo vehiculo, Tecnico tecnico, LocalDate fecha) {
         this.cliente = cliente;
         this.vehiculo = vehiculo;
         this.fecha = fecha;
-        this.estado = EstadoOrden.PENDIENTE;
-        this.items = new ArrayList<>();
-    }
-
-        // Sobrecarga del constructor
-    public OrdenServicio(Cliente cliente, Vehiculo vehiculo, Tecnico tecnico, LocalDate fecha) {
-        this(cliente, vehiculo, fecha);
         this.tecnico = tecnico;
         this.items = new ArrayList<>();
     }

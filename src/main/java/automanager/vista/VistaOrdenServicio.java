@@ -6,9 +6,11 @@ import automanager.modelo.ItemOrdenServicio;
 import automanager.modelo.Vehiculo;
 import automanager.modelo.TipoVehiculo;
 import automanager.modelo.Servicio;
+import automanager.modelo.Tecnico;
 
 import java.time.LocalDate;
 import java.util.Scanner;
+import java.util.Random;
 
 public class VistaOrdenServicio {
     private ControladorOrdenServicio controlador;
@@ -38,11 +40,17 @@ public class VistaOrdenServicio {
         System.out.print("Ingrese la placa del vehículo: ");
         String placa = scanner.nextLine();
         System.out.println();
+
+        //  ASIGNAR TECNICO
+        Random random = new Random();
+        int indiceAleatorio = random.nextInt(controlador.getTecnicos().size());
+        Tecnico tecnicoAsignado = controlador.getTecnicos().get(indiceAleatorio);
+
         
         // Crear vehiculo para utilizarlo como parametro para generar nueva orden de servicios
         Vehiculo vehiculo = new Vehiculo(placa.toUpperCase(), tipo); 
 
-        OrdenServicio orden = controlador.generaOrdenServicio(idCliente, fecha, vehiculo);
+        OrdenServicio orden = controlador.generaOrdenServicio(idCliente, fecha, vehiculo, tecnicoAsignado);
 
         // El metodo para generar ordenes del controlador puede devolver null en caso de no existir cliente con el id ingresado
         if (orden == null) { 
