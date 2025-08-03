@@ -71,4 +71,10 @@ public class OrdenServicio {
         return total;
     }
 
+    public enum EstadoOrden {
+    
+    PENDIENTE, EN_PROCESO, COMPLETADA, CANCELADA
+
+}
+
 }

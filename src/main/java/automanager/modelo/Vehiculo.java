@@ -25,5 +25,10 @@ public class Vehiculo {
     public void setTipo(TipoVehiculo tipo) {
         this.tipo = tipo;
     }
+
+    public enum TipoVehiculo {
+    
+    AUTOMOVIL, MOTOCICLETA, BUS
+}
   
 }
