@@ -44,7 +44,7 @@ public class Factura {
         for (OrdenServicio orden : ordenes) {
             total += orden.calcularTotal();
         }
-        if (cliente.getTipo() == TipoCliente.EMPRESARIAL) {
+        if (cliente.getTipo() == Cliente.TipoCliente.EMPRESARIAL) {
             total += CARGO_FIJO_EMPRESARIAL;
         }
         return total;

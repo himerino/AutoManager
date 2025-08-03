@@ -4,7 +4,6 @@ import automanager.controlador.ControladorOrdenServicio;
 import automanager.modelo.OrdenServicio;
 import automanager.modelo.ItemOrdenServicio;
 import automanager.modelo.Vehiculo;
-import automanager.modelo.TipoVehiculo;
 import automanager.modelo.Servicio;
 import automanager.modelo.Tecnico;
 
@@ -36,7 +35,7 @@ public class VistaOrdenServicio {
         System.out.print("Ingrese fecha del servicio (AAAA-MM-DD): ");
         String fechaStr = scanner.nextLine();
         LocalDate fecha = LocalDate.parse(fechaStr);
-        TipoVehiculo tipo = leerTipoVehiculo();
+        Vehiculo.TipoVehiculo tipo = leerTipoVehiculo();
         System.out.print("Ingrese la placa del vehículo: ");
         String placa = scanner.nextLine();
         System.out.println();
@@ -122,15 +121,15 @@ public class VistaOrdenServicio {
     }
 
     // Pedir al usuario que ingrese el tipo de vehiculo para crear la instancia en el metodo iniciar
-    private TipoVehiculo leerTipoVehiculo() {
+    private Vehiculo.TipoVehiculo leerTipoVehiculo() {
         while (true) {
             System.out.print("Tipo de Vehículo (1. AUTOMOVIL, 2. MOTOCICLETA, 3. BUS): ");
             int opcion = scanner.nextInt();
             scanner.nextLine();
             switch (opcion) {
-                case 1 -> { return TipoVehiculo.AUTOMOVIL; }
-                case 2 -> { return TipoVehiculo.MOTOCICLETA; }
-                case 3 -> { return TipoVehiculo.BUS; }
+                case 1 -> { return Vehiculo.TipoVehiculo.AUTOMOVIL; }
+                case 2 -> { return Vehiculo.TipoVehiculo.MOTOCICLETA; }
+                case 3 -> { return Vehiculo.TipoVehiculo.BUS; }
                 default -> System.out.println("Opción inválida. Intente nuevamente.");
             }
         }

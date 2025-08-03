@@ -2,7 +2,6 @@ package automanager.vista;
 
 import automanager.controlador.ControladorCliente;
 import automanager.modelo.Cliente;
-import automanager.modelo.TipoCliente;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -72,7 +71,7 @@ public class VistaCliente {
         String direccion = scanner.nextLine();
         System.out.print("Teléfono: ");
         String telefono = scanner.nextLine();
-        TipoCliente tipo = leerTipoCliente();
+        Cliente.TipoCliente tipo = leerTipoCliente();
 
         MensajeUsuario mensaje = controlador.agregarCliente(id, nombre, direccion, telefono, tipo);
         if (mensaje != null) {
@@ -83,14 +82,14 @@ public class VistaCliente {
     }
 
     // Pedir al usuario que seleccione el tipo de cliente para la nueva instancia de este
-    private TipoCliente leerTipoCliente() {
+    private Cliente.TipoCliente leerTipoCliente() {
         while (true) {
             System.out.print("Tipo de cliente (1. PERSONAL, 2. EMPRESARIAL): ");
             int opcion = scanner.nextInt();
             scanner.nextLine();
             switch (opcion) {
-                case 1 -> { return TipoCliente.PERSONAL; }
-                case 2 -> { return TipoCliente.EMPRESARIAL; }
+                case 1 -> { return Cliente.TipoCliente.PERSONAL; }
+                case 2 -> { return Cliente.TipoCliente.EMPRESARIAL; }
                 default -> System.out.println("Opción inválida. Intente nuevamente.");
             }
         }
